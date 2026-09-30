@@ -126,7 +126,7 @@ export const ContactSection: React.FC = () => {
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-950/40 border border-amber-500/30 text-amber-400 hover:bg-amber-900/40 hover:border-amber-500/50 transition-all text-xs sm:text-sm font-semibold"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
-                  <span>Telegram (@farhanahnaf)</span>
+                  <span>Telegram (@FarhanAhna1)</span>
                 </a>
               </div>
             </div>
