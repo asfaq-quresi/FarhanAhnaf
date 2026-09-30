@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Plus, Minus, PhoneCall } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { FAQS } from '../data/portfolioData';
 
 interface FaqSectionProps {
-  onBookCall: () => void;
+  onBookCall?: () => void;
 }
 
-export const FaqSection: React.FC<FaqSectionProps> = ({ onBookCall }) => {
-  // Default expanded item index is 2 ("How is payment handled?") exactly as shown in Figma
-  const [openIndex, setOpenIndex] = useState<number | null>(2);
+export const FaqSection: React.FC<FaqSectionProps> = () => {
+  // Default expanded item index is 0 ("What type of videos do you edit?")
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleItem = (idx: number) => {
     setOpenIndex(openIndex === idx ? null : idx);
@@ -42,17 +42,12 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onBookCall }) => {
                 </div>
               </div>
 
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 font-heading">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 font-heading">
                 Find your missing puzzle piece
               </h3>
-
-              <button
-                onClick={onBookCall}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:brightness-105 active:scale-[0.99] transition-all cursor-pointer flex items-center justify-center gap-2"
-              >
-                <PhoneCall className="w-4 h-4" />
-                <span>BOOK A CALL</span>
-              </button>
+              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+                Clear communication, transparent workflows, and dedicated creative collaboration from day one.
+              </p>
             </div>
           </div>
 

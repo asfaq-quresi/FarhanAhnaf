@@ -64,7 +64,7 @@ function PortfolioContent() {
 
         {/* Bio & Farhan Portrait Section */}
         <FadeInUp duration={700}>
-          <AboutSection onSendMessage={() => handleOpenBooking('Direct Collaboration Message')} />
+          <AboutSection />
         </FadeInUp>
 
         {/* Featured Projects (Short-Form & Long-Form Infinite Tickers) */}
@@ -84,7 +84,7 @@ function PortfolioContent() {
 
         {/* Questions & FAQ Accordion */}
         <FadeInUp duration={650}>
-          <FaqSection onBookCall={() => handleOpenBooking('Strategy & Discovery Call')} />
+          <FaqSection />
         </FadeInUp>
 
         {/* Contact Banner & Scope Submitter */}

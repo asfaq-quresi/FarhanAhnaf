@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Testimonial', href: '#workflow' },
+    { name: 'What I do', href: '#what-i-did' },
   ];
 
   const handleCapsuleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {

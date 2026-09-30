@@ -2,10 +2,10 @@ import React from 'react';
 import { PORTRAIT_IMAGE } from '../data/portfolioData';
 
 interface AboutSectionProps {
-  onSendMessage: () => void;
+  onSendMessage?: () => void;
 }
 
-export const AboutSection: React.FC<AboutSectionProps> = ({ onSendMessage }) => {
+export const AboutSection: React.FC<AboutSectionProps> = () => {
   return (
     <section id="about" className="py-20 md:py-28 relative overflow-hidden">
       {/* Subtle orbital dashed lines in background */}
@@ -45,16 +45,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onSendMessage }) => 
               <p>
                 From creative passion projects to commercial edits, I bring technical precision and artistic direction to every project. I&apos;m currently available for freelance projects and long-term collaborations—let&apos;s build something great.
               </p>
-            </div>
-
-            <div className="pt-2">
-              <button
-                onClick={onSendMessage}
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 hover:brightness-105 active:scale-[0.99] transition-all cursor-pointer inline-flex items-center gap-2 group"
-              >
-                <span>Send Me a Message</span>
-                <span className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">🚀</span>
-              </button>
             </div>
 
             {/* Bottom Sub-stats from Figma */}

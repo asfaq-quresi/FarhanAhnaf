@@ -201,7 +201,7 @@ export const CraftBento: React.FC = () => {
   }, []);
 
   return (
-    <section id="craft" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="what-i-did" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background ambient lighting */}
       <div 
         aria-hidden="true" 
@@ -216,7 +216,7 @@ export const CraftBento: React.FC = () => {
             <span>Technical Mastery & Pacing Architecture</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight font-heading">
-            Craftsmanship That Retains Viewers
+            What I Do & How I Edit
           </h2>
           <p className="text-neutral-400 text-xs sm:text-sm mt-1.5">
             Hand-tuned post-production workflows optimized for watch time, algorithmic reach, and emotional connection. Hover any card to pause and interact.
@@ -228,7 +228,7 @@ export const CraftBento: React.FC = () => {
           <div className="flex items-center justify-between mb-5 px-4 sm:px-0">
             <div className="flex items-center gap-3">
               <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight font-heading">
-                What I Edit
+                What I Do
               </h3>
               <span className="text-xs text-neutral-400 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800">
                 Content Formats & Video Architectures

@@ -33,7 +33,7 @@ interface VelocityTickerTrackProps {
 const VelocityTickerTrack = React.forwardRef<TickerHandle, VelocityTickerTrackProps>(({
   items,
   direction = 'left',
-  baseSpeed = 1.4,
+  baseSpeed = 0.45,
   aspectRatio,
   cardWidthClass,
   onSelectProject,
@@ -108,9 +108,9 @@ const VelocityTickerTrack = React.forwardRef<TickerHandle, VelocityTickerTrackPr
     // Calculate scroll velocity magnitude
     const velocityMagnitude = Math.abs(vel);
 
-    // Target multiplier: 1x baseline up to ~8x accelerated speed when scrolling fast
+    // Target multiplier: 1x baseline up to ~2.5x gentle accelerated speed when scrolling fast
     // Smoothly drops to 0 when hovered so user can inspect and click easily
-    const targetMultiplier = isHovered ? 0 : 1 + Math.min(velocityMagnitude / 140, 7);
+    const targetMultiplier = isHovered ? 0 : 1 + Math.min(velocityMagnitude / 220, 2);
 
     // Smooth inertia interpolation (lerp)
     currentMultiplier.current += (targetMultiplier - currentMultiplier.current) * 0.12;
@@ -264,7 +264,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
             ref={shortFormRef}
             items={SHORT_FORM_PROJECTS}
             direction="left"
-            baseSpeed={1.42}
+            baseSpeed={0.45}
             aspectRatio="9:16"
             cardWidthClass="w-[200px] sm:w-[230px] md:w-[250px]"
             onSelectProject={onSelectProject}
@@ -308,7 +308,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
             ref={longFormRef}
             items={LONG_FORM_PROJECTS}
             direction="right"
-            baseSpeed={1.15}
+            baseSpeed={0.35}
             aspectRatio="16:9"
             cardWidthClass="w-[280px] sm:w-[340px] md:w-[380px]"
             onSelectProject={onSelectProject}
