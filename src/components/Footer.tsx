@@ -43,48 +43,6 @@ export const Footer: React.FC = () => {
           <div>
             © 2025 Farhan Ahnaf. All rights reserved. Built for high-impact visual storytelling.
           </div>
-
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <a
-              href="https://youtube.com/@farhanahnaf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-red-400 transition-colors inline-flex items-center gap-1.5"
-              title="YouTube: @farhanahnaf"
-            >
-              <span>YouTube</span>
-              <span className="text-[10px] text-neutral-400">@farhanahnaf</span>
-            </a>
-            <a
-              href="https://instagram.com/farhanahnaf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-pink-400 transition-colors inline-flex items-center gap-1.5"
-              title="Instagram: @farhanahnaf"
-            >
-              <span>Instagram</span>
-              <span className="text-[10px] text-neutral-400">@farhanahnaf</span>
-            </a>
-            <a
-              href="https://x.com/farhanahnaf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-sky-400 transition-colors inline-flex items-center gap-1.5"
-              title="Twitter / X: @farhanahnaf"
-            >
-              <span>X (Twitter)</span>
-              <span className="text-[10px] text-neutral-400">@farhanahnaf</span>
-            </a>
-            <a
-              href="https://linkedin.com/in/farhanahnaf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-blue-400 transition-colors inline-flex items-center gap-1.5"
-              title="LinkedIn: in/farhanahnaf"
-            >
-              <span>LinkedIn</span>
-            </a>
-          </div>
         </div>
       </div>
     </footer>
