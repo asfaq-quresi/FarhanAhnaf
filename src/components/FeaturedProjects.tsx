@@ -8,13 +8,18 @@ import {
   useTransform,
   useAnimationFrame,
 } from 'motion/react';
-import { Play, Sparkles } from 'lucide-react';
+import { Play, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   SHORT_FORM_PROJECTS,
   LONG_FORM_PROJECTS,
   ProjectItem,
 } from '../data/portfolioData';
 import { useSmoothScroll } from '../context/SmoothScrollContext';
+
+export interface TickerHandle {
+  nudgeLeft: () => void;
+  nudgeRight: () => void;
+}
 
 interface VelocityTickerTrackProps {
   items: ProjectItem[];
@@ -25,14 +30,14 @@ interface VelocityTickerTrackProps {
   onSelectProject: (project: ProjectItem) => void;
 }
 
-const VelocityTickerTrack: React.FC<VelocityTickerTrackProps> = ({
+const VelocityTickerTrack = React.forwardRef<TickerHandle, VelocityTickerTrackProps>(({
   items,
   direction = 'left',
   baseSpeed = 1.4,
   aspectRatio,
   cardWidthClass,
   onSelectProject,
-}) => {
+}, ref) => {
   const [isHovered, setIsHovered] = useState(false);
   const baseX = useMotionValue(0);
   const { lenis } = useSmoothScroll();
@@ -49,6 +54,25 @@ const VelocityTickerTrack: React.FC<VelocityTickerTrackProps> = ({
   const targetDirection = useRef<number>(1);
   const currentDirection = useRef<number>(1);
   const currentMultiplier = useRef<number>(1);
+
+  // Manual interactive offset for controller arrows
+  const manualOffsetTarget = useRef<number>(0);
+  const manualOffsetCurrent = useRef<number>(0);
+
+  // Nudge Left: shifts track rightward (+%) so user sees previous items
+  const nudgeLeft = () => {
+    manualOffsetTarget.current += (aspectRatio === '9:16' ? 6.5 : 8.5);
+  };
+
+  // Nudge Right: shifts track leftward (-%) so user sees next items
+  const nudgeRight = () => {
+    manualOffsetTarget.current -= (aspectRatio === '9:16' ? 6.5 : 8.5);
+  };
+
+  React.useImperativeHandle(ref, () => ({
+    nudgeLeft,
+    nudgeRight,
+  }));
 
   // Hook into Lenis scroll direction for precise gesture tracking
   useEffect(() => {
@@ -91,7 +115,12 @@ const VelocityTickerTrack: React.FC<VelocityTickerTrackProps> = ({
     // Smooth inertia interpolation (lerp)
     currentMultiplier.current += (targetMultiplier - currentMultiplier.current) * 0.12;
 
-    if (currentMultiplier.current < 0.001) return;
+    // Smooth manual offset interpolation for arrow controllers
+    const offsetDiff = manualOffsetTarget.current - manualOffsetCurrent.current;
+    const manualStep = offsetDiff * 0.14;
+    manualOffsetCurrent.current += manualStep;
+
+    if (currentMultiplier.current < 0.001 && Math.abs(offsetDiff) < 0.001) return;
 
     // Base direction factor: 'left' -> -1, 'right' -> +1
     const defaultDirFactor = direction === 'left' ? -1 : 1;
@@ -100,7 +129,7 @@ const VelocityTickerTrack: React.FC<VelocityTickerTrackProps> = ({
 
     const moveBy = (clampedDelta / 1000) * baseSpeed * currentMultiplier.current * effectiveDir;
 
-    const newX = baseX.get() + moveBy;
+    const newX = baseX.get() + moveBy + manualStep;
 
     // Wrap seamlessly between -50% and 0%
     const min = -50;
@@ -118,7 +147,7 @@ const VelocityTickerTrack: React.FC<VelocityTickerTrackProps> = ({
 
   return (
     <div
-      className="relative w-full overflow-hidden py-3 select-none"
+      className="relative w-full overflow-hidden py-3 select-none group/track"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -163,13 +192,18 @@ const VelocityTickerTrack: React.FC<VelocityTickerTrackProps> = ({
       </motion.div>
     </div>
   );
-};
+});
+
+VelocityTickerTrack.displayName = 'VelocityTickerTrack';
 
 interface FeaturedProjectsProps {
   onSelectProject: (project: ProjectItem) => void;
 }
 
 export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProject }) => {
+  const shortFormRef = useRef<TickerHandle>(null);
+  const longFormRef = useRef<TickerHandle>(null);
+
   return (
     <section id="projects" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background ambient lighting */}
@@ -189,22 +223,45 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
             Featured Projects
           </h2>
           <p className="text-neutral-400 text-xs sm:text-sm mt-1.5 max-w-xl">
-            Get a glimpse of my craftsmanship — continuous stream of high-retention video edits. Scrolls dynamically with page velocity and direction.
+            Get a glimpse of my craftsmanship — continuous stream of high-retention video edits. Scrolls dynamically with page velocity and direction, or navigate using the arrow controls.
           </p>
         </div>
 
         {/* ================= 1. SHORT FORM TICKER ================= */}
         <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
-            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight font-heading">
-              Short Form
-            </h3>
-            <span className="text-xs text-neutral-400 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800">
-              Reels · TikTok · Shorts
-            </span>
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight font-heading">
+                Short Form
+              </h3>
+              <span className="text-xs text-neutral-400 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800">
+                Reels · TikTok · Shorts
+              </span>
+            </div>
+
+            {/* Controller: Forward & Backward Arrows */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => shortFormRef.current?.nudgeLeft()}
+                aria-label="Previous Short Form videos"
+                title="Scroll backward"
+                className="p-2 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white border border-neutral-800 hover:border-amber-500/50 transition-all cursor-pointer shadow-sm active:scale-95"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => shortFormRef.current?.nudgeRight()}
+                aria-label="Next Short Form videos"
+                title="Scroll forward"
+                className="p-2 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white border border-neutral-800 hover:border-amber-500/50 transition-all cursor-pointer shadow-sm active:scale-95"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           <VelocityTickerTrack
+            ref={shortFormRef}
             items={SHORT_FORM_PROJECTS}
             direction="left"
             baseSpeed={1.42}
@@ -216,16 +273,39 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
 
         {/* ================= 2. LONG FORM TICKER ================= */}
         <div>
-          <div className="flex items-center gap-3 mb-6">
-            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight font-heading">
-              Long Form
-            </h3>
-            <span className="text-xs text-neutral-400 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800">
-              YouTube · Documentaries · Masterclasses
-            </span>
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight font-heading">
+                Long Form
+              </h3>
+              <span className="text-xs text-neutral-400 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800">
+                YouTube · Documentaries · Masterclasses
+              </span>
+            </div>
+
+            {/* Controller: Forward & Backward Arrows */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => longFormRef.current?.nudgeLeft()}
+                aria-label="Previous Long Form videos"
+                title="Scroll backward"
+                className="p-2 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white border border-neutral-800 hover:border-amber-500/50 transition-all cursor-pointer shadow-sm active:scale-95"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => longFormRef.current?.nudgeRight()}
+                aria-label="Next Long Form videos"
+                title="Scroll forward"
+                className="p-2 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white border border-neutral-800 hover:border-amber-500/50 transition-all cursor-pointer shadow-sm active:scale-95"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           <VelocityTickerTrack
+            ref={longFormRef}
             items={LONG_FORM_PROJECTS}
             direction="right"
             baseSpeed={1.15}
