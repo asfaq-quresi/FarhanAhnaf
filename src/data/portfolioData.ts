@@ -1,4 +1,4 @@
-import farhanPortrait from '@/src/assets/images/farhan_editor_portrait_1790509231257.jpg';
+import farhanPortrait from '@/src/assets/images/FarhanAhnaf.png';
 import shortFormTravel from '@/src/assets/images/short_form_travel_1790509243055.jpg';
 import shortFormFood from '@/src/assets/images/short_form_food_1790509256170.jpg';
 import shortFormWorkspace from '@/src/assets/images/short_form_workspace_1790509267494.jpg';
