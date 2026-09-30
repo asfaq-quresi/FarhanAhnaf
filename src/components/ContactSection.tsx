@@ -104,29 +104,85 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Row 3: Direct Chat */}
-            <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-neutral-900/40 transition-colors">
+            {/* Row 3: Direct Chat & Messaging */}
+            <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-neutral-900/40 transition-colors">
               <span className="text-xs uppercase tracking-wider text-neutral-400 font-medium">
-                DIRECT CHAT
+                INSTANT MESSAGING
               </span>
-              <div className="flex items-center gap-4 text-sm sm:text-base font-medium">
-                <a
-                  href="https://t.me/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-amber-400 hover:underline flex items-center gap-1.5"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>Telegram</span>
-                </a>
-                <span className="text-neutral-600">•</span>
+              <div className="flex flex-wrap items-center gap-3 text-sm">
                 <a
                   href="https://wa.me/8801581928743"
                   target="_blank"
-                  rel="noreferrer"
-                  className="text-emerald-400 hover:underline flex items-center gap-1.5 font-mono text-sm"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-900/40 hover:border-emerald-500/50 transition-all font-mono text-xs sm:text-sm font-semibold"
                 >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>WhatsApp (+880 1581-928743)</span>
+                </a>
+                <a
+                  href="https://t.me/farhanahnaf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-950/40 border border-amber-500/30 text-amber-400 hover:bg-amber-900/40 hover:border-amber-500/50 transition-all text-xs sm:text-sm font-semibold"
+                >
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  <span>Telegram (@farhanahnaf)</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Row 4: Social Channels & Handles */}
+            <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-start sm:items-center justify-between gap-3 hover:bg-neutral-900/40 transition-colors">
+              <div>
+                <span className="text-xs uppercase tracking-wider text-neutral-400 font-medium block">
+                  SOCIAL CHANNELS
+                </span>
+                <span className="text-[11px] text-neutral-400">Follow & verify my active work</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <a
+                  href="https://youtube.com/@farhanahnaf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-red-500/10 border border-neutral-800 hover:border-red-500/40 text-neutral-300 hover:text-red-400 transition-all text-xs font-medium inline-flex items-center gap-1.5"
+                  title="YouTube: @farhanahnaf"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                  <span>YouTube</span>
+                  <span className="text-neutral-400 text-[10px]">@farhanahnaf</span>
+                </a>
+                <a
+                  href="https://instagram.com/farhanahnaf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-pink-500/10 border border-neutral-800 hover:border-pink-500/40 text-neutral-300 hover:text-pink-400 transition-all text-xs font-medium inline-flex items-center gap-1.5"
+                  title="Instagram: @farhanahnaf"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-pink-500" />
+                  <span>Instagram</span>
+                  <span className="text-neutral-400 text-[10px]">@farhanahnaf</span>
+                </a>
+                <a
+                  href="https://x.com/farhanahnaf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-sky-500/10 border border-neutral-800 hover:border-sky-500/40 text-neutral-300 hover:text-sky-400 transition-all text-xs font-medium inline-flex items-center gap-1.5"
+                  title="Twitter / X: @farhanahnaf"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                  <span>Twitter / X</span>
+                  <span className="text-neutral-400 text-[10px]">@farhanahnaf</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/farhanahnaf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-blue-500/10 border border-neutral-800 hover:border-blue-500/40 text-neutral-300 hover:text-blue-400 transition-all text-xs font-medium inline-flex items-center gap-1.5"
+                  title="LinkedIn: in/farhanahnaf"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                  <span>LinkedIn</span>
+                  <span className="text-neutral-400 text-[10px]">in/farhanahnaf</span>
                 </a>
               </div>
             </div>

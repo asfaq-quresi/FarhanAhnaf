@@ -44,38 +44,45 @@ export const Footer: React.FC = () => {
             © 2025 Farhan Ahnaf. All rights reserved. Built for high-impact visual storytelling.
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <a
-              href="https://youtube.com"
+              href="https://youtube.com/@farhanahnaf"
               target="_blank"
-              rel="noreferrer"
-              className="hover:text-amber-400 transition-colors"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-red-400 transition-colors inline-flex items-center gap-1.5"
+              title="YouTube: @farhanahnaf"
             >
-              YouTube
+              <span>YouTube</span>
+              <span className="text-[10px] text-neutral-400">@farhanahnaf</span>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/farhanahnaf"
               target="_blank"
-              rel="noreferrer"
-              className="hover:text-amber-400 transition-colors"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-pink-400 transition-colors inline-flex items-center gap-1.5"
+              title="Instagram: @farhanahnaf"
             >
-              Instagram
+              <span>Instagram</span>
+              <span className="text-[10px] text-neutral-400">@farhanahnaf</span>
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/farhanahnaf"
               target="_blank"
-              rel="noreferrer"
-              className="hover:text-amber-400 transition-colors"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-sky-400 transition-colors inline-flex items-center gap-1.5"
+              title="Twitter / X: @farhanahnaf"
             >
-              Twitter / X
+              <span>X (Twitter)</span>
+              <span className="text-[10px] text-neutral-400">@farhanahnaf</span>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/farhanahnaf"
               target="_blank"
-              rel="noreferrer"
-              className="hover:text-amber-400 transition-colors"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-blue-400 transition-colors inline-flex items-center gap-1.5"
+              title="LinkedIn: in/farhanahnaf"
             >
-              LinkedIn
+              <span>LinkedIn</span>
             </a>
           </div>
         </div>

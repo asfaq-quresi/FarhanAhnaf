@@ -222,9 +222,6 @@ export const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
                 {project.videoSrc ? `${currentTimeFormatted} / ${durationFormatted}` : project.duration}
               </span>
             </div>
-            <span className="text-[10px] font-mono uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-              {project.retention}
-            </span>
           </div>
         </div>
       </div>
