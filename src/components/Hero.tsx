@@ -256,7 +256,7 @@ export const Hero: React.FC<HeroProps> = () => {
           {/* Stat 3 */}
           <div className="text-center min-w-[130px]">
             <div className="text-2xl sm:text-3xl font-bold text-white tracking-tight tabular-nums mb-1 font-heading">
-              2+ Yrs
+              3+ Yrs
             </div>
             <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-neutral-400 font-medium">
               Proven Experience
