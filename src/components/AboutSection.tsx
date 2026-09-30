@@ -1,5 +1,6 @@
 import React from 'react';
 import { PORTRAIT_IMAGE } from '../data/portfolioData';
+import { TextReveal } from './TextReveal';
 
 interface AboutSectionProps {
   onSendMessage?: () => void;
@@ -33,10 +34,15 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Text Column */}
           <div className="lg:col-span-7 space-y-5">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-[1.2] font-heading">
+            <TextReveal
+              as="h2"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-[1.2] font-heading"
+              delay={0.1}
+              stagger={0.04}
+            >
               Because the right edit doesn&apos;t just show a story —{' '}
               <span className="text-amber-400">it makes you feel it</span>
-            </h2>
+            </TextReveal>
 
             <div className="space-y-3.5 text-neutral-300 text-sm sm:text-[15px] leading-relaxed font-normal">
               <p>

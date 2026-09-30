@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import { FAQS } from '../data/portfolioData';
+import { TextReveal } from './TextReveal';
 
 interface FaqSectionProps {
   onBookCall?: () => void;
@@ -20,9 +21,14 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Heading + Book Call CTA Box */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight font-heading">
+            <TextReveal
+              as="h2"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight font-heading"
+              delay={0.1}
+              stagger={0.06}
+            >
               Questions?
-            </h2>
+            </TextReveal>
 
             {/* CTA Box from Figma */}
             <div className="bg-gradient-to-b from-neutral-900/90 to-neutral-950 border border-neutral-800 rounded-3xl p-6 sm:p-7 relative overflow-hidden shadow-2xl">

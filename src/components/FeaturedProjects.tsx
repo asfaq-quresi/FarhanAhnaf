@@ -9,6 +9,7 @@ import {
   useAnimationFrame,
 } from 'motion/react';
 import { Play, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { TextReveal } from './TextReveal';
 import {
   SHORT_FORM_PROJECTS,
   LONG_FORM_PROJECTS,
@@ -219,9 +220,14 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
             <Sparkles className="w-3.5 h-3.5" />
             <span>Showcase & Portfolio</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight font-heading">
+          <TextReveal
+            as="h2"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight font-heading"
+            delay={0.1}
+            stagger={0.06}
+          >
             Featured Projects
-          </h2>
+          </TextReveal>
           <p className="text-neutral-400 text-xs sm:text-sm mt-1.5 max-w-xl">
             Get a glimpse of my craftsmanship — continuous stream of high-retention video edits. Scrolls dynamically with page velocity and direction, or navigate using the arrow controls.
           </p>

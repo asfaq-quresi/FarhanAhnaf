@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, MessageSquare, Copy, Check } from 'lucide-react';
+import { TextReveal } from './TextReveal';
 
 export const ContactSection: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -47,12 +48,17 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight mb-3 font-heading">
+          <TextReveal
+            as="h2"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight mb-3 font-heading"
+            delay={0.1}
+            stagger={0.05}
+          >
             Let&apos;s Create <br className="sm:hidden" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-amber-500">
               Something Cinematic
             </span>
-          </h2>
+          </TextReveal>
 
           {/* Subtitle */}
           <p className="text-neutral-400 text-sm sm:text-base max-w-2xl leading-relaxed mb-8">

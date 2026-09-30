@@ -1,5 +1,6 @@
 import React from 'react';
 import { Clock, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { TextReveal } from './TextReveal';
 
 export const WorkflowSection: React.FC = () => {
   return (
@@ -16,9 +17,14 @@ export const WorkflowSection: React.FC = () => {
                 <span>Handling Revisions & Collaborative Workflow</span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight leading-snug font-heading">
+              <TextReveal
+                as="h2"
+                className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight leading-snug font-heading"
+                delay={0.1}
+                stagger={0.04}
+              >
                 Story-Driven Pacing + Stress-Free Collaborative Revision
-              </h2>
+              </TextReveal>
 
               <p className="text-neutral-300 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-2xl">
                 We cut out dead air, filler words, and awkward pauses to craft a gripping emotional arc. Every video draft is reviewed via Frame.io or timestamped markers, ensuring rapid turnaround on feedback until the final render is 100% flawless.

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { TextReveal } from './TextReveal';
 
 interface HeroProps {
   onExploreProjects?: () => void;
@@ -194,7 +195,12 @@ export const Hero: React.FC<HeroProps> = () => {
       {/* ================= HERO CONTENT (HIGH-CONTRAST READABILITY - UNCHANGED) ================= */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Main Headline with Animated Gradient Accent on Key Phrase */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight text-white leading-[1.15] mb-5 font-heading drop-shadow-sm">
+        <TextReveal
+          as="h1"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight text-white leading-[1.15] mb-5 font-heading drop-shadow-sm"
+          delay={0.15}
+          stagger={0.05}
+        >
           I Turn Raw Footage Into <br className="hidden sm:inline" />
           <motion.span
             className="inline-block bg-gradient-to-r from-amber-200 via-orange-400 to-amber-300 text-transparent bg-clip-text"
@@ -212,7 +218,7 @@ export const Hero: React.FC<HeroProps> = () => {
           >
             Stories Worth Watching
           </motion.span>
-        </h1>
+        </TextReveal>
 
         {/* Subtitle */}
         <p

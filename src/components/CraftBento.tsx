@@ -17,6 +17,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
+import { TextReveal } from './TextReveal';
 import {
   motion,
   useScroll,
@@ -215,9 +216,14 @@ export const CraftBento: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Technical Mastery & Pacing Architecture</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight font-heading">
+          <TextReveal
+            as="h2"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight font-heading"
+            delay={0.1}
+            stagger={0.045}
+          >
             What I Do & How I Edit
-          </h2>
+          </TextReveal>
           <p className="text-neutral-400 text-xs sm:text-sm mt-1.5">
             Hand-tuned post-production workflows optimized for watch time, algorithmic reach, and emotional connection. Hover any card to pause and interact.
           </p>
