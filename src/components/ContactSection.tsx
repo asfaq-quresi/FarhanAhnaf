@@ -132,60 +132,6 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Row 4: Social Channels & Handles */}
-            <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-start sm:items-center justify-between gap-3 hover:bg-neutral-900/40 transition-colors">
-              <div>
-                <span className="text-xs uppercase tracking-wider text-neutral-400 font-medium block">
-                  SOCIAL CHANNELS
-                </span>
-                <span className="text-[11px] text-neutral-400">Follow & verify my active work</span>
-              </div>
-              <div className="flex flex-wrap items-center gap-2">
-                <a
-                  href="https://youtube.com/@farhanahnaf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-red-500/10 border border-neutral-800 hover:border-red-500/40 text-neutral-300 hover:text-red-400 transition-all text-xs font-medium inline-flex items-center gap-1.5"
-                  title="YouTube: @farhanahnaf"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                  <span>YouTube</span>
-                  <span className="text-neutral-400 text-[10px]">@farhanahnaf</span>
-                </a>
-                <a
-                  href="https://instagram.com/farhanahnaf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-pink-500/10 border border-neutral-800 hover:border-pink-500/40 text-neutral-300 hover:text-pink-400 transition-all text-xs font-medium inline-flex items-center gap-1.5"
-                  title="Instagram: @farhanahnaf"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-pink-500" />
-                  <span>Instagram</span>
-                  <span className="text-neutral-400 text-[10px]">@farhanahnaf</span>
-                </a>
-                <a
-                  href="https://x.com/farhanahnaf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-sky-500/10 border border-neutral-800 hover:border-sky-500/40 text-neutral-300 hover:text-sky-400 transition-all text-xs font-medium inline-flex items-center gap-1.5"
-                  title="Twitter / X: @farhanahnaf"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
-                  <span>Twitter / X</span>
-                  <span className="text-neutral-400 text-[10px]">@farhanahnaf</span>
-                </a>
-                <a
-                  href="https://linkedin.com/in/farhanahnaf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-blue-500/10 border border-neutral-800 hover:border-blue-500/40 text-neutral-300 hover:text-blue-400 transition-all text-xs font-medium inline-flex items-center gap-1.5"
-                  title="LinkedIn: in/farhanahnaf"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                  <span>LinkedIn</span>
-                  <span className="text-neutral-400 text-[10px]">in/farhanahnaf</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

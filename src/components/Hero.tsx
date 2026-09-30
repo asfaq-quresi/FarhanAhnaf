@@ -265,39 +265,6 @@ export const Hero: React.FC<HeroProps> = () => {
         </div>
 
         {/* Subtle Social Handles Quick Bar */}
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-neutral-400">
-          <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-medium">Verified Channels:</span>
-          <a
-            href="https://youtube.com/@farhanahnaf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-3 py-1 rounded-full bg-white/[0.03] hover:bg-red-500/10 border border-white/[0.08] hover:border-red-500/40 text-neutral-300 hover:text-red-400 transition-all text-[11px] inline-flex items-center gap-1.5 shadow-sm"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-            <span className="font-medium">YouTube</span>
-            <span className="text-neutral-400 font-mono text-[10px]">@farhanahnaf</span>
-          </a>
-          <a
-            href="https://instagram.com/farhanahnaf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-3 py-1 rounded-full bg-white/[0.03] hover:bg-pink-500/10 border border-white/[0.08] hover:border-pink-500/40 text-neutral-300 hover:text-pink-400 transition-all text-[11px] inline-flex items-center gap-1.5 shadow-sm"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-pink-500" />
-            <span className="font-medium">Instagram</span>
-            <span className="text-neutral-400 font-mono text-[10px]">@farhanahnaf</span>
-          </a>
-          <a
-            href="https://x.com/farhanahnaf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-3 py-1 rounded-full bg-white/[0.03] hover:bg-sky-500/10 border border-white/[0.08] hover:border-sky-500/40 text-neutral-300 hover:text-sky-400 transition-all text-[11px] inline-flex items-center gap-1.5 shadow-sm"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
-            <span className="font-medium">X (Twitter)</span>
-            <span className="text-neutral-400 font-mono text-[10px]">@farhanahnaf</span>
-          </a>
-        </div>
       </div>
     </section>
   );
