@@ -120,7 +120,7 @@ export const ContactSection: React.FC = () => {
                   <span>WhatsApp (+880 1581-928743)</span>
                 </a>
                 <a
-                  href="https://t.me/farhanahnaf"
+                  href="https://t.me/FarhanAhna1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-950/40 border border-amber-500/30 text-amber-400 hover:bg-amber-900/40 hover:border-amber-500/50 transition-all text-xs sm:text-sm font-semibold"
