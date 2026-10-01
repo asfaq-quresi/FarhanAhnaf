@@ -27,7 +27,7 @@ export const WorkflowSection: React.FC = () => {
               </TextReveal>
 
               <p className="text-neutral-300 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-2xl">
-                We cut out dead air, filler words, and awkward pauses to craft a gripping emotional arc. Every video draft is reviewed via Frame.io or timestamped markers, ensuring rapid turnaround on feedback until the final render is 100% flawless.
+                I cut out dead air, filler words, and awkward pauses to craft a gripping emotional arc. Every video draft is reviewed via Frame.io or timestamped markers, ensuring rapid turnaround on feedback until the final render is 100% flawless.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-4 text-xs text-neutral-400">
