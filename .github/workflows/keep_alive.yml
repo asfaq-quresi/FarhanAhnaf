@@ -1,0 +1,17 @@
+name: Keep Supabase Active
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every Sunday and Thursday (twice a week)
+    - cron: '0 0 * * 0,4'
+  workflow_dispatch: # Allows manual triggering from the GitHub UI
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Storage API
+        run: |
+          curl -i -X GET "${{ secrets.SUPABASE_URL }}/storage/v1/bucket" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
